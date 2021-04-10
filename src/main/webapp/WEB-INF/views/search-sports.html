@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Search</title>
+</head>
+    <body>
+        <div id="container">
+            <h3>Search for Sports</h3>
+            <form action="#" th:action="@{/search/done}"  th:object="${objClass}" method="POST">
+
+                <label for="startDate">Start Date: </label>
+                <input type="date" th:field="*{start_date}" id="startDate">
+                <div style="color: red" th:if="${#fields.hasErrors('start_date')}" th:errors="*{start_date}"></div>
+
+
+                <label for="endDate">End Date: </label>
+                <input type="date" th:field="*{stop_date}" id="endDate">
+                <div style="color: red" th:if="${#fields.hasErrors('stop_date')}" th:errors="*{stop_date}"></div>
+
+                <div class="container">
+
+                    <p>
+                        <strong>Select Sports(Multiple):</strong>
+                        <br><br>
+                        <select  th:field="*{sportList}" multiple="multiple">
+                            <option th:each="hobby: ${sports}"
+                                    th:value="${hobby}" th:text="${hobby}">
+                        </select>
+                    <div style="color: red" th:if="${#fields.hasErrors('sportList')}" th:errors="*{sportList}"></div>
+                    </p>
+
+                    <input type="submit" value="submit"/>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>

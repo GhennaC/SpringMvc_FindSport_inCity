@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List all sports</title>
+
+    <style type="text/css">
+        td
+        {
+            padding:0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <h1>List of all sports in your period </h1>
+        <table class="">
+            <thead>
+            <tr>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th>Sport Name</th>
+                <th>Start date</th>
+                <th>Stop date</th>
+                <th>Price per day</th>
+                <th>City</th>
+            </tr>
+
+            <tr th:each="sport : ${sports}">
+                <td><span th:text="${sport.name}"></span> </td>
+                <td><span th:text="${#dates.format(sport.start_date,'dd-MM-yyyy')}"></span> </td>
+                <td><span th:text="${#dates.format(sport.stop_date,'dd-MM-yyyy')}"></span> </td>
+                <td><span th:text="${sport.price}"></span> </td>
+                <td><span th:text="${sport.city.name}"></span> </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

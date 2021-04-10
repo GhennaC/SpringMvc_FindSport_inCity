@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cities List</title>
+
+    <style type="text/css">
+        td
+        {
+            padding:0 15px;
+        }
+    </style>
+</head>
+    <body>
+
+        <div align="center">
+            <h1>List of cities</h1>
+            <table class="">
+                <thead>
+                <tr>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>List of sports</th>
+                </tr>
+
+                <tr th:each="city : ${cities}">
+
+                    <td><span th:text="${city.name}"></span> </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a th:href="${(#mvc.url('CityController#showSports').arg(0,city.id).build())}">Sports</a> </td>
+
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</html>

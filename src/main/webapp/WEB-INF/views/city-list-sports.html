@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List all sports</title>
+
+    <style type="text/css">
+        td
+        {
+            padding:0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <h1>List of sports  in your city</h1>
+        <table class="">
+            <thead>
+            <tr>
+                <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th>Sport Name</th>
+                <th>Start date</th>
+                <th>Stop date</th>
+                <th>Price</th>
+                <th>Edit</th>
+            </tr>
+
+            <tr th:each="sport : ${sports}">
+                <td><span th:text="${sport.name}"></span> </td>
+                <td><span th:text="${#dates.format(sport.start_date,'dd-MM-yyyy')}"></span> </td>
+                <td><span th:text="${#dates.format(sport.stop_date,'dd-MM-yyyy')}"></span> </td>
+                <td><span th:text="${sport.price}"></span> </td>
+                <td>
+                    <a th:href="@{UpdateSport (sportId=${sport.id})}">Update</a>
+                    |
+                    <a th:href="@{deleteSport (sportId=${sport.id},cityId=${sport.city.id}) }"
+                       onclick="if (!(confirm('Are you sure want to delete this sport?'))) return false">Delete</a>
+                </td>
+            </tr>
+
+            <tr>
+                <a th:href="@{add (cityId=${cityId})}">Add new Sport</a>
+            </tr>
+
+            </tbody>
+
+            <td >
+                <a th:href="@{/city/}">Back to cities</a>
+            </td>
+        </table>
+    </div>
+</body>
+</html>

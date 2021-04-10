@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sport Form</title>
+</head>
+<body>
+
+
+    <form action="#" th:action="@{saveSport}" th:object="${sport}" method="post">
+
+        <input type="hidden" th:value="${sport.id}" name="id" />
+        <input type="hidden" th:value="${cityId}" name="cityId" />
+        <div>
+            <label>Name:</label>
+            <input type="text"  th:field="*{name}"/>
+            <td><div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div></td>
+        </div>
+
+        <div>
+            <label>Start date: <input type="date" th:field="*{start_date}"/></label>
+            <td><div style="color: red" th:if="${#fields.hasErrors('start_date')}" th:errors="*{start_date}"></div></td>
+        </div>
+
+        <div>
+            <label>Stop date: <input type="date" th:field="*{stop_date}"/></label>
+            <td><div style="color: red" th:if="${#fields.hasErrors('stop_date')}" th:errors="*{stop_date}"></div></td>
+
+        </div>
+
+        <div>
+            <label>Price: <input type="text" th:field="*{price}"/></label>
+            <td><div style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div></td>
+        </div>
+
+        <div>
+            <p><input type="submit" value="Save"></p>
+        </div>
+    </form>
+
+</body>
+</html>
