@@ -20,7 +20,7 @@ Configurating database(worked with Mysql) and testing the connection.
 
 Some screenshots of the app flow
 
-![List of all sports](ReadmeSrc\list-all-sports.png)
+![List of all sports](ReadmeSrc/list-all-sports.png)
 
 
 
