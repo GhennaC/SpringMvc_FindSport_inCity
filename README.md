@@ -1,5 +1,7 @@
 ## ReadMe
 
+### Main functionality : Can choose one or more sports wanted and the period for practice , the output will be all the cities with sports printed ordered by price(can see below).
+
 In development of the project I had few steps:
 
 1.Configurating the project(java configuration) and adding all dependencies to   pom.xml;
@@ -52,19 +54,6 @@ Some screenshots of the app flow
 
 
 
-
-
-Just like a feedback: First i want to thank Atta Systems for that experience, I had
-
-a 2 weeks of real challenge for me(before receiving an email I have started a  spring course for beginners, have done 55% of it in first week and second week tried to do something with obtained knowledge)
-
-I know that it had to be an Rest API project, but I looked for more information about REST API and differences between MVC and REST, was not sure what I need to do and tried to do with mvc , i think in 2-3 weeks i will know what i needed(cause the next steps in the course are about Rest api).
-
-I think the app is  structured,easy to modify and extend.
-
-Waiting for a feedback to know what can I do better.
-
-Have a nice day.
 
 ​			  																					***Ghenadie Caraman***
 
