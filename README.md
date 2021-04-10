@@ -55,7 +55,7 @@ Some screenshots of the app flow
 
 
 
-​			  																					***Ghenadie Caraman***
+***Used:*** Thymeleaf, Hibernate, Mysql, Spring mvc, Apache Tomcat 9.0+ server
 
 
 
